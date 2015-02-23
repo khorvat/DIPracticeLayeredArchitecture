@@ -57,7 +57,7 @@ namespace Cart.WebAPI.App_Start
 
                 RegisterServices(kernel);
 
-                // Install our Ninject-based IDependencyResolver into the Web API configuration Set Web API Resolver
+                // Install Ninject-based IDependencyResolver into the Web API configuration to set Web API Resolver
                 GlobalConfiguration.Configuration.DependencyResolver = new NinjectDependencyResolver(kernel);
                 return kernel;
             }
