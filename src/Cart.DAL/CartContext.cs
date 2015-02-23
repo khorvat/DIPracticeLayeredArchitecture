@@ -9,7 +9,13 @@ namespace Cart.DAL
 
         public CartContext()
         {
-            Carts = new List<CartEntity>();
+            Carts = new List<CartEntity>() {
+                new CartEntity()
+                {
+                    Id = Guid.NewGuid(),
+                    Items = new List<ProductEntity>()
+                }
+            };
             Products = new List<ProductEntity>()
             {
                 new ProductEntity() {

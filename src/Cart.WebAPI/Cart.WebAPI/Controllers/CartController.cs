@@ -6,6 +6,7 @@ using System.Web.Http;
 
 namespace Cart.WebAPI.Controllers
 {
+    [RoutePrefix("api/cart")]
     public class CartController : ApiController
     {
         #region Constructors
@@ -34,9 +35,17 @@ namespace Cart.WebAPI.Controllers
         #region Methods
 
         [HttpGet]
+        [Route("products")]
         public List<IProduct> GetAsync()
         {
             return Service.GetAllAvailableProducts();
+        }
+
+        [HttpGet]
+        [Route("my-cart")]
+        public ICart GetMyCartAsync()
+        {
+            return Service.GetMyCart();
         }
 
         #endregion Methods
