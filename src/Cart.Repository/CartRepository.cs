@@ -4,6 +4,7 @@ using Cart.Model.Common;
 using Cart.Repository.Common;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Cart.Repository
 {
@@ -35,6 +36,17 @@ namespace Cart.Repository
         #region Methods
 
         /// <summary>
+        /// Adds to cart.
+        /// </summary>
+        /// <param name="productId">The product identifier.</param>
+        /// <returns></returns>
+        public bool AddToCart(int productId)
+        {
+            Context.Carts.FirstOrDefault().Items.Add(Context.Products.First(p => p.Id.Equals(productId)));
+            return true;
+        }
+
+        /// <summary>
         /// Gets all cart.
         /// </summary>
         /// <returns></returns>
@@ -50,6 +62,16 @@ namespace Cart.Repository
         public List<IProduct> GetAllProducts()
         {
             return new List<IProduct>(AutoMapper.Mapper.Map<List<Product>>(Context.Products));
+        }
+
+        /// <summary>
+        /// Removes from cart.
+        /// </summary>
+        /// <param name="productId">The product identifier.</param>
+        /// <returns></returns>
+        public bool RemoveFromCart(int productId)
+        {
+            return Context.Carts.FirstOrDefault().Items.Remove(Context.Products.First(p => p.Id.Equals(productId)));
         }
 
         #endregion Methods

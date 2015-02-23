@@ -9,6 +9,13 @@ namespace Cart.Repository.Common
         #region Methods
 
         /// <summary>
+        /// Adds to cart.
+        /// </summary>
+        /// <param name="productId">The product identifier.</param>
+        /// <returns></returns>
+        bool AddToCart(int productId);
+
+        /// <summary>
         /// Gets all cart.
         /// </summary>
         /// <returns></returns>
@@ -19,6 +26,13 @@ namespace Cart.Repository.Common
         /// </summary>
         /// <returns></returns>
         List<IProduct> GetAllProducts();
+
+        /// <summary>
+        /// Removes from cart.
+        /// </summary>
+        /// <param name="productId">The product identifier.</param>
+        /// <returns></returns>
+        bool RemoveFromCart(int productId);
 
         #endregion Methods
     }

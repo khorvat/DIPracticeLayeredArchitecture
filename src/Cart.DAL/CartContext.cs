@@ -12,35 +12,35 @@ namespace Cart.DAL
             Carts = new List<CartEntity>() {
                 new CartEntity()
                 {
-                    Id = Guid.NewGuid(),
+                    Id = 1,
                     Items = new List<ProductEntity>()
                 }
             };
             Products = new List<ProductEntity>()
             {
                 new ProductEntity() {
-                    Id = Guid.NewGuid(),
+                    Id = 1,
                     Name = "Product 1",
                     Description = "Product 1 that everyone needs",
                     Price = 1000,
                     InStock = true
                 },
                 new ProductEntity() {
-                    Id = Guid.NewGuid(),
+                    Id = 2,
                     Name = "Product 2",
                     Description = "Product 2 that everyone needs",
                     Price = 2000,
                     InStock = true
                 },
                 new ProductEntity() {
-                    Id = Guid.NewGuid(),
+                    Id = 3,
                     Name = "Product 3",
                     Description = "Product 3 that everyone needs",
                     Price = 3000,
                     InStock = true
                 },
                 new ProductEntity() {
-                    Id = Guid.NewGuid(),
+                    Id = 4,
                     Name = "Product 4",
                     Description = "Product 4 that everyone needs",
                     Price = 4000,

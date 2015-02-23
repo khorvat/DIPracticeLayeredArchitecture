@@ -35,6 +35,20 @@ namespace Cart.Service
         #region Methods
 
         /// <summary>
+        /// Adds to cart.
+        /// </summary>
+        /// <param name="productId">The product identifier.</param>
+        /// <returns></returns>
+        public bool AddToCart(int productId)
+        {
+            if (!Repository.GetAllProducts().First(p => p.Id.Equals(productId)).InStock)
+            {
+                throw new ArgumentOutOfRangeException("InStock");
+            }
+            return Repository.AddToCart(productId);
+        }
+
+        /// <summary>
         /// Gets all available products.
         /// </summary>
         /// <returns></returns>
@@ -50,6 +64,16 @@ namespace Cart.Service
         public ICart GetMyCart()
         {
             return Repository.GetAllCarts().FirstOrDefault();
+        }
+
+        /// <summary>
+        /// Removes from cart.
+        /// </summary>
+        /// <param name="productId">The product identifier.</param>
+        /// <returns></returns>
+        public bool RemoveFromCart(int productId)
+        {
+            return Repository.RemoveFromCart(productId);
         }
 
         #endregion Methods

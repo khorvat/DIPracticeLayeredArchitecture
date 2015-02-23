@@ -34,6 +34,13 @@ namespace Cart.WebAPI.Controllers
 
         #region Methods
 
+        [HttpDelete]
+        [Route("my-cart/products/{id}")]
+        public bool DeleteMyCartProductsAsync(int id)
+        {
+            return Service.RemoveFromCart(id);
+        }
+
         [HttpGet]
         [Route("products")]
         public List<IProduct> GetAsync()
@@ -46,6 +53,20 @@ namespace Cart.WebAPI.Controllers
         public ICart GetMyCartAsync()
         {
             return Service.GetMyCart();
+        }
+
+        [HttpGet]
+        [Route("my-cart/products")]
+        public List<IProduct> GetMyCartProductsAsync()
+        {
+            return Service.GetMyCart().Items;
+        }
+
+        [HttpPost]
+        [Route("my-cart/products/{id}")]
+        public bool PostMyCartProductsAsync(int id)
+        {
+            return Service.AddToCart(id);
         }
 
         #endregion Methods
