@@ -13,6 +13,12 @@ namespace Cart.DAL
         public string Description { get; set; }
 
         /// <summary>
+        /// Gets or sets the expiration date.
+        /// </summary>
+        /// <value>The expiration date.</value>
+        public DateTime ExpDate { get; set; }
+
+        /// <summary>
         /// Gets or sets the identifier.
         /// </summary>
         /// <value>The identifier.</value>
@@ -23,6 +29,12 @@ namespace Cart.DAL
         /// </summary>
         /// <value><c>true</c> if item is in stock otherwise, <c>false</c>.</value>
         public bool InStock { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is deleted.
+        /// </summary>
+        /// <value><c>true</c> if this instance is deleted; otherwise, <c>false</c>.</value>
+        public bool IsDeleted { get; set; }
 
         /// <summary>
         /// Gets or sets the name.
