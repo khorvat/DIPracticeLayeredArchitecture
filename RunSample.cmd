@@ -72,3 +72,11 @@ echo.
 echo.
 pause
 cls
+echo.
+echo Try to Add Exp. Date Product to My Cart - Product 7
+echo.
+curl --data '' http://localhost/DILA/api/cart/my-cart/products/7
+echo.
+echo.
+pause
+cls

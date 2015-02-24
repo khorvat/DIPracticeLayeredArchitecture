@@ -76,6 +76,10 @@ namespace Cart.WebAPI.Controllers
             {
                 return Request.CreateResponse(HttpStatusCode.BadRequest, "Item is Out of Stock.");
             }
+            catch (ArgumentNullException ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.NotFound, "Item's expiration date has passed.");
+            }
         }
 
         #endregion Methods
