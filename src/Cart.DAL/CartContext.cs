@@ -46,6 +46,23 @@ namespace Cart.DAL
                     Price = 4000,
                     InStock = false
                 }
+                ,
+                new ProductEntity() {
+                    Id = 5,
+                    Name = "Product 5",
+                    Description = "Product 5 that everyone needs",
+                    Price = 5000,
+                    InStock = true,
+                    IsDeleted = true
+                },
+                new ProductEntity() {
+                    Id = 6,
+                    Name = "Product 6",
+                    Description = "Product 6 that everyone needs",
+                    Price = 6000,
+                    InStock = true,
+                    IsDeleted = true
+                }
             };
         }
 

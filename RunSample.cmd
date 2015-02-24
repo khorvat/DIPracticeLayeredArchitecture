@@ -56,3 +56,19 @@ echo.
 echo.
 pause
 cls
+echo.
+echo Try to Add Out of Stock Product to My Cart - Product 4
+echo.
+curl --data '' http://localhost/DILA/api/cart/my-cart/products/4
+echo.
+echo.
+pause
+cls
+echo.
+echo Try to Add Deleted Product to My Cart - Product 5
+echo.
+curl --data '' http://localhost/DILA/api/cart/my-cart/products/5
+echo.
+echo.
+pause
+cls
