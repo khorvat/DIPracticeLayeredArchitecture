@@ -1,5 +1,6 @@
 ﻿using Cart.Service.Common;
-using Ninject.Extensions.Interception.Infrastructure.Language;
+
+//using Ninject.Extensions.Interception.Infrastructure.Language;
 using System;
 
 namespace Cart.Service.Ex
@@ -13,7 +14,7 @@ namespace Cart.Service.Ex
         /// </summary>
         public override void Load()
         {
-            Bind<ICartService>().To<CartServiceEx>().Intercept().With<Cart.Common.ICartInterceptor>();
+            Bind<ICartService>().To<CartServiceEx>(); //.Intercept().With<Cart.Common.ICartInterceptor>();
         }
 
         #endregion Methods

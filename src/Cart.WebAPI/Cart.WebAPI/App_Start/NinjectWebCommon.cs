@@ -5,6 +5,7 @@ namespace Cart.WebAPI.App_Start
 {
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
     using Ninject;
+    using Ninject.Extensions.Interception.Infrastructure.Language;
     using Ninject.Web.Common;
     using Ninject.Web.WebApi;
     using System;
@@ -74,7 +75,10 @@ namespace Cart.WebAPI.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<Cart.Common.ICartInterceptor>().To<GreedyInterceptor>();
+            //kernel.Bind<Cart.Common.ICartInterceptor>().To<GreedyInterceptor>();
+            //Note: This isn't a good way to obtain the Cart Service implementation type. This is Ninject limitation.
+            var cartService = kernel.Get<Cart.Service.Common.ICartService>();
+            kernel.Rebind<Cart.Service.Common.ICartService>().To(cartService.GetType()).Intercept().With<GreedyInterceptor>();
         }
 
         #endregion Methods
