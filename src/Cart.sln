@@ -28,6 +28,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{937350
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cart.Repository.Ex", "Cart.Repository.Ex\Cart.Repository.Ex.csproj", "{CC5A4D70-3C87-48E8-B3F3-8CE6A67CAEB3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cart.Service.Ex", "Cart.Service.Ex\Cart.Service.Ex.csproj", "{45AFE7E3-A8A3-413D-8AFF-46CECEF17638}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,6 +72,10 @@ Global
 		{CC5A4D70-3C87-48E8-B3F3-8CE6A67CAEB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC5A4D70-3C87-48E8-B3F3-8CE6A67CAEB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC5A4D70-3C87-48E8-B3F3-8CE6A67CAEB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45AFE7E3-A8A3-413D-8AFF-46CECEF17638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45AFE7E3-A8A3-413D-8AFF-46CECEF17638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45AFE7E3-A8A3-413D-8AFF-46CECEF17638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45AFE7E3-A8A3-413D-8AFF-46CECEF17638}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,6 +2,7 @@ cls
 @Echo off
 
 del src\Cart.WebAPI\Cart.WebAPI\bin\Cart.Repository.dll /Q
+del src\Cart.WebAPI\Cart.WebAPI\bin\Cart.Service.dll /Q
 cls
 echo.
 echo Product list
@@ -71,6 +72,14 @@ echo.
 echo Try to Add Deleted Product to My Cart - Product 5
 echo.
 curl --data '' http://localhost:63924/api/cart/my-cart/products/5
+echo.
+echo.
+pause
+cls
+echo.
+echo Try to Add Exp. Date Product to My Cart - Product 7
+echo.
+curl --data '' http://localhost:63924/api/cart/my-cart/products/7
 echo.
 echo.
 pause
