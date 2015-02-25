@@ -2,6 +2,8 @@
 using Cart.Service.Common;
 using System;
 using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
 using System.Web.Http;
 
 namespace Cart.WebAPI.Controllers
@@ -64,9 +66,16 @@ namespace Cart.WebAPI.Controllers
 
         [HttpPost]
         [Route("my-cart/products/{id}")]
-        public bool PostMyCartProductsAsync(int id)
+        public HttpResponseMessage PostMyCartProductsAsync(int id)
         {
-            return Service.AddToCart(id);
+            try
+            {
+                return Request.CreateResponse<bool>(Service.AddToCart(id));
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "Item is Out of Stock.");
+            }
         }
 
         #endregion Methods
