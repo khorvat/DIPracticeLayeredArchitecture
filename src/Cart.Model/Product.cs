@@ -1,8 +1,10 @@
 ﻿using Cart.Model.Common;
 using System;
+using System.Runtime.Serialization;
 
 namespace Cart.Model
 {
+    [KnownType(typeof(Product))]
     public class Product : IProduct
     {
         #region Properties
